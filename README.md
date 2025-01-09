@@ -1,4 +1,3 @@
-![](screenshots/PRA.png)
 
 Inspired by many **specialized ETFs** (Exchange-Traded Funds: An investment vehicle that pools a group of securities into a fund. It can be traded like an individual stock on an exchange). Creating a basket of stocks with weights for **specific investment strategies or weighting criteria beyond traditional market-capitalization indexes and treating them all as a unit.**
 <br/>
@@ -10,10 +9,6 @@ This project offers optimization and modeling tools for investment strategies. L
 <br/>
 
 
-### [View Risk Analysis w/ 15 risk metrics in Python](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/py_files/RiskAnalysis.ipynb)
-### [Fama French 3-Factor Modeling of NYSE stocks in Python](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/py_files/Multi_Factor_Analysis2.ipynb)
-### [Meet Min Volatility and Max Sharpe Ratio on the EfficientFrontier of NSE stocks](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/py_files/ETFs.ipynb)
-<br/> 
 
 # 1. Data Extraction and Portfolio Construction <br/>
 Utilized `yfinance` for data retrieval of NSE stocks, obtaining historical price data for a specified date range. <br/>
@@ -65,17 +60,16 @@ Therefore, standard deviation annualized = sqrt(250) * standard deviation daily.
 - `port_variance = np.dot(weights.T, np.dot(cov_matrix, weights))`
 - `port_standard_dev = np.sqrt(port_variance)`
 
-[View Portfolio Variance derivation](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/Portfolio_variance.pdf) <br/>
 
 #### Q. Why annualizing covariance?
-so that we calculate the annualized volatility later. <br/>
+so that we can calculate the annualised volatility later. <br/>
 
-#### Q. Why portfolio variance formula instead of standard deviation?
+#### Q. Why use the portfolio variance formula instead of standard deviation?
 **Precision**: As stocks are **correlated** to each other, we need to account for **correlations** b/w stocks. This gives more **precision** in measuring volatility. <br/>
-It can be forward looking if covariance matrix is estimated or forecasted. <br/>
+It can be forward-looking if the covariance matrix is estimated or forecasted. <br/>
 
-#### Q. Benefits of historical method?
-Historical data method can include rebalancing. <br/>
+#### Q. Benefits of the historical method?
+Historical data methods can include rebalancing. <br/>
 
 ## Skewness
 Skewness measures the asymmetry of the distribution of data around its mean. <br/>
@@ -97,16 +91,6 @@ k>3: FAT (leptokurtic) | high risk-high reward
 - `var = np.percentile(returns_pf, 5)`
 - `cvar = returns_pf [returns_pf <= var].mean()`
 
-<img src="screenshots/var2.JPG" alt="Description" width="500">
-
-
-Monte Carlo Simulation:<br/>
-<img src="screenshots/mcsim.JPG" alt="Description" width="500">
-
-Monte Carlo VaR:<br/>
-<img src="screenshots/mcvar.JPG" alt="Description" width="500">
-
-
 ### [View Complete Risk Analysis](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/py_files/RiskAnalysis.ipynb) w/ 15 Portfolio Risk metrics including 5 VaR metrics
 <br/> 
 
@@ -120,7 +104,6 @@ Risk management:
 - Optimize portfolio by adjusting exposures
 - Evaluate performance
 <br/>
-<img src="screenshots/alpha.JPG" alt="Description" width="1000">
 
 #### Q. Why not use UFO sightings as a factor?
 because there might be a high correlation with their levels but not with their changes so correlation of % change or differences will be close to 0.
@@ -131,21 +114,10 @@ because there might be a high correlation with their levels but not with their c
 
 # 5. Portfolio Optimization | Efficient Frontier
 
-<img src="screenshots/lagrangemultiplier.JPG" alt="Description" width="600">
-
-## Optimal weights <br/>
-
-<img src="screenshots/op_wts.JPG" alt="Description" width="600">
-
 ## Efficient Frontier <br/>
 
+**The efficient frontier is the set of portfolios that achieve the highest return for a given risk or the lowest risk for a given return, representing optimal diversification.** 
 
-<img src="screenshots/eff_front3.JPG" alt="Description" width="600">
-
-**The efficient frontier is the set of portfolios that achieve the highest return for a given risk or the lowest risk for a given return, representing optimal diversification.** <br/>
-[View Portfolio Optimization maths](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/Portfolio_Optimization.pdf) <br/>
-
-### [View Complete Portfolio Optimization](https://github.com/s1dewalker/Portfolio_Analysis/blob/main/py_files/ETFs.ipynb) of NSE stocks
 
 <br/>
 
@@ -154,4 +126,3 @@ because there might be a high correlation with their levels but not with their c
 <br/>
 
 *hope you find it helpful, and encourage you to forward any suggestions for improvements* <br/>
-##### [LinkedIn](https://www.linkedin.com/in/sujay-bhaumik-d12/) | s1dewalker23@gmail.com | [Discussions](https://github.com/s1dewalker/Portfolio_Analysis/discussions/1) | [Research Works](https://github.com/s1dewalker/Research-Works)
